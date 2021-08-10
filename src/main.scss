@@ -1,0 +1,18 @@
+
+@import 'reset-css/reset.css';
+
+body {
+  background-color: yellow;
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-selection,
+::-moz-selection,
+::selection {
+  background: #000;
+  color: #fff;
+  text-shadow: none;
+}
