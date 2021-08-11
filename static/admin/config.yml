@@ -69,7 +69,7 @@ collections:
         widget: "image"
 
   - name: "home-en"
-    label: "Home DE"
+    label: "Home EN"
     create: false
     delete: false
     folder: "content/home_en/"
