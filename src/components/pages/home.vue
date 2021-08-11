@@ -9,7 +9,7 @@
     >
     </div>
     <div id="intro-p2"
-      v-html="getHTMLfromMD(home.intro01)"
+      v-html="getHTMLfromMD(home.intro02)"
     >
     </div>
     <div id="about"
