@@ -8,24 +8,24 @@
       class="navigation__container"
       v-if="this.isDisplayed"
     >
-      <router-link
+      <a
         class="navigation__link"
-        to="/about"
+        href="#about"
       >
-        About
-      </router-link>
-      <router-link
+        Über mich
+      </a>
+      <a
         class="navigation__link"
-        to="/items"
+        href="#availablity"
       >
-        Items
-      </router-link>
-      <router-link
+        Verfügbarkeit
+      </a>
+      <a
         class="navigation__link"
-        to="/contact"
+        href="#contact"
       >
-        Contact
-      </router-link>
+        Kontakt
+      </a>
     </div>
   </nav>
 </template>
