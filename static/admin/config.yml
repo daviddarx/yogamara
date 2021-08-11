@@ -17,7 +17,7 @@ collections:
     summary: "Version: {{version}} - {{title}}"
     fields:
       - label: "Intro - part 1"
-        name: "intro-01"
+        name: "intro01"
         widget: "markdown"
         buttons:
           - bold
@@ -25,7 +25,7 @@ collections:
           - heading-three
           - bulleted-list
       - label: "Intro - part 2"
-        name: "intro-02"
+        name: "intro02"
         widget: "markdown"
         buttons:
           - heading-two
@@ -65,5 +65,5 @@ collections:
           - heading-three
           - bulleted-list
       - label: "Contact image"
-        name: "contact-image"
+        name: "contactImage"
         widget: "image"
