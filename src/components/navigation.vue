@@ -11,18 +11,21 @@
       <a
         class="navigation__link"
         href="#about"
+        @click="scrollToAnchor"
       >
         Über mich
       </a>
       <a
         class="navigation__link"
         href="#availablity"
+        @click="scrollToAnchor"
       >
         Verfügbarkeit
       </a>
       <a
         class="navigation__link"
         href="#contact"
+        @click="scrollToAnchor"
       >
         Kontakt
       </a>
@@ -45,7 +48,13 @@
     methods: {
       displayNav: function () {
         this.isDisplayed = true;
-      }
+      },
+      scrollToAnchor: function(e) {
+        e.preventDefault();
+
+        let $targetedElement = document.querySelector(e.target.getAttribute('href'));
+        $targetedElement.scrollIntoView({behavior: "smooth"});
+      },
     }
   });
 </script>
