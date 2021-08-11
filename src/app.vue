@@ -7,8 +7,6 @@
       'is-android': this.isAndroid
     }"
   >
-    <h1 class="visually-hidden">Boilerplate Vue.js</h1>
-
     <logo></logo>
 
     <custom-navigation ref="nav"></custom-navigation>
