@@ -8,24 +8,24 @@
       class="navigation__container"
       v-if="this.isDisplayed"
     >
-      <router-link
+      <a
         class="navigation__link"
-        to="/page-01"
+        href="#about"
       >
-        Page 01
-      </router-link>
-      <router-link
+        Über mich
+      </a>
+      <a
         class="navigation__link"
-        to="/page-02"
+        href="#availablity"
       >
-        Page 02
-      </router-link>
-      <router-link
+        Verfügbarkeit
+      </a>
+      <a
         class="navigation__link"
-        to="/page-03"
+        href="#contact"
       >
-        Page 03
-      </router-link>
+        Kontakt
+      </a>
     </div>
   </nav>
 </template>
