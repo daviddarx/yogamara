@@ -17,8 +17,6 @@
         ref="view"
       >
       </router-view>
-
-      <custom-footer></custom-footer>
     </div>
 
 
@@ -32,7 +30,6 @@
   import Vue from "vue";
   import Logo from './components/logo.vue';
   import CustomNavigation from './components/navigation.vue';
-  import CustomFooter from './components/footer.vue';
   import CustomTransition from './components/transition.vue';
   import BrowserWarning from './components/browser-warning.vue';
   import browserDetect from './browser-detect';
@@ -42,7 +39,6 @@
     components: {
       'logo': Logo,
       'custom-navigation': CustomNavigation,
-      'custom-footer': CustomFooter,
       'custom-transition': CustomTransition,
       'browser-warning': BrowserWarning,
     },
