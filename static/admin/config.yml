@@ -10,7 +10,7 @@ collections:
     label: "Home DE"
     create: false
     delete: false
-    folder: "content/home/"
+    folder: "content/home_de/"
     slug: "home-de"
     extension: "json"
     format: "json"
