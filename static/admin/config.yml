@@ -64,3 +64,6 @@ collections:
           - link
           - heading-three
           - bulleted-list
+      - label: "Contact image"
+        name: "contact-image"
+        widget: "image"
