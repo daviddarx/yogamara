@@ -4,34 +4,34 @@
     class="home"
     v-bind:class="{ 'is-displayed': this.isDisplayed }"
   >
-    <h2>
-      {{home.title}}
-    </h2>
-
-    <div
-      v-html="getHTMLfromMD(home.content)"
+    <div id="intro-p1"
+      v-html="getHTMLfromMD(home.intro01)"
     >
     </div>
-    <div id="intro-p1">
-      intro 1
+    <div id="intro-p2"
+      v-html="getHTMLfromMD(home.intro01)"
+    >
     </div>
-    <div id="intro-p2">
-      intro 2
+    <div id="about"
+      v-html="getHTMLfromMD(home.about)"
+    >
     </div>
-    <div id="about">
-      <h2>
-        Über mich
-      </h2>
-    </div>
-    <div id="availablity">
-      <h2>
-        Verfügbarkeit
-      </h2>
+    <div id="availablity"
+      v-html="getHTMLfromMD(home.availablity)"
+    >
     </div>
     <div id="contact">
-      <h2>
-        Kontakt
-      </h2>
+      <div class="contact__image">
+        <img
+          class="contact__image-el"
+          alt="Mara Pavic – thoughtful yoga practice"
+          :src = home.contactImage
+        >
+      </div>
+      <div class="contact__text"
+        v-html="getHTMLfromMD(home.contact)"
+      >
+      </div>
     </div>
   </div>
 </template>
