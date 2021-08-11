@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: daviddarx/boilerplate-vuejs
+  repo: daviddarx/yogamara
 
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
