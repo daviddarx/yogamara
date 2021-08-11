@@ -5,12 +5,15 @@ import routes from './routes';
 Vue.use(VueRouter);
 
 const scrollBehavior = (to, from, savedPosition) => {
-  if (to.hash) {
-      return {selector: to.hash}
-      //Or for Vue 3:
-      //return {el: to.hash}
+  if (savedPosition) {
+    return savedPosition;
   } else {
-      return { x: 0, y: 0 }
+    const position = {};
+
+    position.x = 0;
+    position.y = 0;
+
+    return position;
   }
 }
 

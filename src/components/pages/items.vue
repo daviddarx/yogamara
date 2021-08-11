@@ -1,16 +1,29 @@
 
 <template>
   <div
-    class="home"
     v-bind:class="{ 'is-displayed': this.isDisplayed }"
   >
     <h2>
-      {{home.title}}
+      {{items.title}}
     </h2>
 
     <div
-      v-html="getHTMLfromMD(home.content)"
+      v-html="getHTMLfromMD(items.content)"
     >
+    </div>
+
+    <div>
+      <div
+        v-for="item in list"
+        :key="item.title"
+        ref="item"
+      >
+        <router-link
+          v-bind:to="'/items/'+item.uuid"
+        >
+          {{item.title}}
+        </router-link>
+      </div>
     </div>
 
     <custom-footer></custom-footer>
@@ -30,7 +43,8 @@
     mixins: [getHTMLfromMDMixin],
     data() {
       return {
-        home: contents.home,
+        items: contents.items,
+        list: contents.itemsList,
         isDisplayed : false,
       }
     },

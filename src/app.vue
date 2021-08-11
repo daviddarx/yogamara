@@ -7,18 +7,24 @@
       'is-android': this.isAndroid
     }"
   >
+    <h1 class="visually-hidden">Boilerplate Vue.js</h1>
+
     <logo></logo>
 
     <custom-navigation ref="nav"></custom-navigation>
 
     <div class="content">
-      <router-view
-        :key="$route.fullPath"
-        ref="view"
+      <transition
+        name="content"
       >
-      </router-view>
-    </div>
+        <router-view
+          :key="$route.fullPath"
+          ref="view"
+        >
+        </router-view>
+      </transition>
 
+    </div>
 
     <custom-transition></custom-transition>
 

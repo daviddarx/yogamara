@@ -4,28 +4,17 @@
     class="transition"
   >
     <transition
-      name="transition-in"
+      name="transition"
       v-on:after-enter="aferEnterIn"
     >
       <div
-        class="transition__bg--in"
+        class="transition__bg"
         v-if="this.isDisplayingIn"
-      >
-      </div>
-    </transition>
-     <transition
-      name="transition-out"
-      v-on:after-enter="afterEnterOut"
-    >
-      <div
-        class="transition__bg--out"
-        v-if="this.isDisplayingOut"
       >
       </div>
     </transition>
   </div>
 </template>
-
 <script>
   import Vue from "vue";
 

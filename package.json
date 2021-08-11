@@ -9,9 +9,9 @@
     "eslint": "^6.0.0",
     "eslint-traverser": "^1.5.2",
     "lodash-cli": "^4.17.5",
+    "marked": "^1.2.7",
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-eslint": "^1.0.7",
-    "parcel-plugin-prerender": "^1.4.1",
     "parcel-plugin-static-files-copy": "^2.5.0",
     "parcel-plugin-svg-sprite": "^1.4.1",
     "reset-css": "^4.0.1",
@@ -38,7 +38,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com:daviddarx/boilerplate-vuejs.git"
+    "url": "git@github.com:daviddarx/boilerplate-vuejs.git"
   },
   "author": "David Darx",
   "license": "ISC"

@@ -1,0 +1,12 @@
+{
+  "uuid": "lemon",
+  "title": "Lemon 3",
+  "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  "image": "/images/uploads/sample2.jpg",
+  "date": "2021-05-05T06:03:09.403Z",
+  "additionalImages": [
+    {
+      "image": "/images/uploads/sample2_small.jpg"
+    }
+  ]
+}

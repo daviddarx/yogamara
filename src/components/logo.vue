@@ -4,7 +4,11 @@
     class="logo"
   >
     <div class="logo__container">
-      <h1>Mara Yoga <span class="logo__subline">thoughtful yoga practice</span></h1>
+      <router-link
+        to="/"
+      >
+        LOGO
+      </router-link>
     </div>
   </div>
 </template>

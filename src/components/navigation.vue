@@ -8,27 +8,24 @@
       class="navigation__container"
       v-if="this.isDisplayed"
     >
-      <a
+      <router-link
         class="navigation__link"
-        href="#about"
-        @click="scrollToAnchor"
+        to="/about"
       >
-        Über mich
-      </a>
-      <a
+        About
+      </router-link>
+      <router-link
         class="navigation__link"
-        href="#availablity"
-        @click="scrollToAnchor"
+        to="/items"
       >
-        Verfügbarkeit
-      </a>
-      <a
+        Items
+      </router-link>
+      <router-link
         class="navigation__link"
-        href="#contact"
-        @click="scrollToAnchor"
+        to="/contact"
       >
-        Kontakt
-      </a>
+        Contact
+      </router-link>
     </div>
   </nav>
 </template>
@@ -48,13 +45,7 @@
     methods: {
       displayNav: function () {
         this.isDisplayed = true;
-      },
-      scrollToAnchor: function(e) {
-        e.preventDefault();
-
-        let $targetedElement = document.querySelector(e.target.getAttribute('href'));
-        $targetedElement.scrollIntoView({behavior: "smooth"});
-      },
+      }
     }
   });
 </script>

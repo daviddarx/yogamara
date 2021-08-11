@@ -1,0 +1,18 @@
+{
+  "uuid": "green",
+  "title": "Green 4",
+  "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla elementum scelerisque. Fusce a velit a erat venenatis aliquam ornare sed arcu.",
+  "image": "/images/uploads/sample1.jpg",
+  "date": "2021-05-03T22:00:00.000Z",
+  "additionalImages": [
+    {
+      "image": "/images/uploads/sample1_small.jpg"
+    },
+    {
+      "image": "/images/uploads/sample1_small.jpg"
+    },
+    {
+      "image": "/images/uploads/sample1_small.jpg"
+    }
+  ]
+}

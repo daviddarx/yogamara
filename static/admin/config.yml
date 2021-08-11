@@ -1,0 +1,175 @@
+backend:
+  name: github
+  repo: daviddarx/boilerplate-vuejs
+
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "home"
+    label: "Home"
+    create: false
+    delete: false
+    folder: "content/home/"
+    slug: "home"
+    extension: "json"
+    format: "json"
+    summary: "Version: {{version}} - {{title}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+
+      - label: "Content"
+        name: "content"
+        widget: "markdown"
+        buttons:
+          - bold
+          - link
+          - heading-three
+          - bulleted-list
+
+  - name: "about"
+    label: "About"
+    create: false
+    delete: false
+    folder: "content/about/"
+    slug: "about"
+    extension: "json"
+    format: "json"
+    summary: "Version: {{version}} - {{title}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+
+      - label: "Content"
+        name: "content"
+        widget: "list"
+        required: false
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Text Content"
+            name: "textcontent"
+            required: false
+            widget: "markdown"
+            buttons:
+              - bold
+              - link
+              - heading-three
+              - bulleted-list
+          - label: "List Content"
+            name: "listcontent"
+            widget: "list"
+            required: false
+            fields:
+              - label: "Definition List"
+                name: "definitionlist"
+                widget: "object"
+                required: false
+                fields:
+                  - label: "Title"
+                    name: "title"
+                    widget: "string"
+                    required: false
+
+                  - label: "Description"
+                    name: "desc"
+                    widget: "markdown"
+                    required: false
+                    buttons:
+                    - bold
+                    - link
+
+  - name: "items"
+    label: "Items"
+    create: false
+    delete: false
+    folder: "content/items/"
+    slug: "items"
+    extension: "json"
+    format: "json"
+    summary: "Version: {{version}} - {{title}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+
+      - label: "Content"
+        name: "content"
+        widget: "markdown"
+        buttons:
+          - bold
+          - link
+          - heading-three
+          - bulleted-list
+
+  - name: "item"
+    label: "Item"
+    folder: "content/items/items/"
+    create: true
+    slug: "{{uuid}}"
+    description: "Create pages for items."
+    extension: "json"
+    format: "json"
+    summary: "Version: {{version}} - {{title}}"
+    fields:
+      - label: "uuid"
+        name: "uuid"
+        widget: "string"
+
+      - label: "Date"
+        name: "date"
+        widget: "datetime"
+        default: ""
+
+      - label: "Title"
+        name: "title"
+        widget: "string"
+
+      - label: "Desc"
+        name: "desc"
+        widget: "markdown"
+        buttons:
+          - bold
+          - link
+          - heading-three
+          - bulleted-list
+
+      - label: "Image"
+        name: "image"
+        widget: "image"
+
+      - label: "Additional Images"
+        name: "additionalImages"
+        widget: "list"
+        required: false
+        fields:
+          - label: "Image"
+            name: "image"
+            widget: "image"
+
+  - name: "contact"
+    label: "Contact"
+    create: false
+    delete: false
+    folder: "content/contact/"
+    slug: "contact"
+    extension: "json"
+    format: "json"
+    summary: "Version: {{version}} - {{title}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+
+      - label: "Content"
+        name: "content"
+        widget: "markdown"
+        buttons:
+          - bold
+          - link
+          - heading-three
+          - bulleted-list

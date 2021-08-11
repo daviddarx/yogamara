@@ -1,15 +1,14 @@
 
 <template>
   <div
-    class="home"
     v-bind:class="{ 'is-displayed': this.isDisplayed }"
   >
     <h2>
-      {{home.title}}
+      {{contact.title}}
     </h2>
 
     <div
-      v-html="getHTMLfromMD(home.content)"
+      v-html="getHTMLfromMD(contact.content)"
     >
     </div>
 
@@ -30,7 +29,7 @@
     mixins: [getHTMLfromMDMixin],
     data() {
       return {
-        home: contents.home,
+        contact: contents.contact,
         isDisplayed : false,
       }
     },
