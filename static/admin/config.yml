@@ -67,3 +67,65 @@ collections:
       - label: "Contact image"
         name: "contactImage"
         widget: "image"
+
+  - name: "home-en"
+    label: "Home DE"
+    create: false
+    delete: false
+    folder: "content/home_en/"
+    slug: "home-en"
+    extension: "json"
+    format: "json"
+    summary: "Version: {{version}} - {{title}}"
+    fields:
+      - label: "Intro - part 1"
+        name: "intro01"
+        widget: "markdown"
+        buttons:
+          - bold
+          - link
+          - heading-three
+          - bulleted-list
+      - label: "Intro - part 2"
+        name: "intro02"
+        widget: "markdown"
+        buttons:
+          - heading-two
+          - heading-three
+          - bold
+          - link
+          - heading-three
+          - bulleted-list
+      - label: "About"
+        name: "about"
+        widget: "markdown"
+        buttons:
+          - heading-two
+          - heading-three
+          - bold
+          - link
+          - heading-three
+          - bulleted-list
+      - label: "Availablity"
+        name: "availablity"
+        widget: "markdown"
+        buttons:
+          - heading-two
+          - heading-three
+          - bold
+          - link
+          - heading-three
+          - bulleted-list
+      - label: "Contact"
+        name: "contact"
+        widget: "markdown"
+        buttons:
+          - heading-two
+          - heading-three
+          - bold
+          - link
+          - heading-three
+          - bulleted-list
+      - label: "Contact image"
+        name: "contactImage"
+        widget: "image"
