@@ -1,0 +1,86 @@
+//fonts
+
+// utilities
+$breakpoints: (
+  'desktop-xl': 'min-width: 1921px',
+  'desktop-l': 'max-width: 1440px',
+  'desktop': 'max-width: 1280px',
+  'tablet': 'max-width: 1024px',
+  'tablet-s': 'max-width: 768px',
+  'mobile-layout': 'max-width: 768px',
+  'mobile-l': 'max-width: 560px',
+  'mobile': 'max-width: 414px',
+  'mobile-s': 'max-width: 320px',
+  'vertical': 'max-aspect-ratio: 12/8',
+  'vertical-xl': 'max-aspect-ratio: 12/10'
+);
+
+@mixin viewport($name) {
+  @if map-has-key($breakpoints, $name) {
+    @media (#{map-get($breakpoints, $name)}) {
+      @content;
+    }
+  }
+}
+
+@mixin hover() {
+  @media not all and (hover: none) {
+    @content;
+  }
+}
+
+@mixin anti-aliased {
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+}
+
+@mixin aliased {
+  -webkit-font-smoothing: auto;
+  -moz-font-smoothing: auto;
+  -o-font-smoothing: auto;
+}
+
+@mixin hyphens {
+  hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+// helper classes
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.visually-hidden a:focus,
+.visually-hidden input:focus,
+.visually-hidden button:focus {
+  position: static;
+  width: auto;
+  height: auto;
+}
+
+// styles
+:root {
+  //colors
+  --c-text: black;
+
+  //sizes
+  --s-text: 1rem;
+  --s-line-height: 1.5;
+  --s-gutter: 2vw;
+
+  //eases https://matthewlein.com/tools/ceaser
+  --e-in: cubic-bezier(0.895, 0.03, 0.685, 0.22); // quart
+  --e-out: cubic-bezier(0.165, 0.84, 0.44, 1); // quart
+  --e-inout: cubic-bezier(0.77, 0, 0.175, 1); // quart
+
+  @include viewport('desktop-xl') {
+    --s-text: 4rem;
+  }
+}

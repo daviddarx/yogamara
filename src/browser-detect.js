@@ -11,6 +11,7 @@ const browserDetection = () => {
 
 export default {
   isSafari: browserDetection() == 'safari',
+  isChromeiOS: (navigator.userAgent.match('CriOS')) ? true : false,
   isiOS: /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream,
   isAndroid: /(android)/i.test(navigator.userAgent),
 };
