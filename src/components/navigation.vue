@@ -8,27 +8,41 @@
       class="navigation__container"
       v-if="this.isDisplayed"
     >
-      <a
-        class="navigation__link"
-        href="#about"
-        @click="scrollToAnchor"
-      >
-        Über mich
-      </a>
-      <a
-        class="navigation__link"
-        href="#availablity"
-        @click="scrollToAnchor"
-      >
-        Verfügbarkeit
-      </a>
-      <a
-        class="navigation__link"
-        href="#contact"
-        @click="scrollToAnchor"
-      >
-        Kontakt
-      </a>
+      <div class="navigation__links">
+        <a
+          class="navigation__link"
+          href="#about"
+          @click="scrollToAnchor"
+        >{{$t('nav.about')}}</a><!--
+        --><a
+          class="navigation__link"
+          href="#availablity"
+          @click="scrollToAnchor"
+        >{{$t('nav.availablity')}}</a><!--
+        --><a
+          class="navigation__link"
+          href="#contact"
+          @click="scrollToAnchor"
+        >{{$t('nav.contact')}}
+        </a>
+
+        <div class="navigation__languages">
+          <a
+            class="language-link language-link--left"
+            :class="{'is-active' : this.$route.params.lang=='de'}"
+            :href="'/de/' + this.$route.name"
+          >
+            DE
+          </a><!--
+          --><a
+            class="language-link language-link--right"
+            :class="{'is-active' : this.$route.params.lang=='en'}"
+            :href="'/en/' + this.$route.name"
+          >
+            EN
+          </a>
+          </div>
+      </div>
     </div>
   </nav>
 </template>

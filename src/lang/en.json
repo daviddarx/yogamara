@@ -1,0 +1,12 @@
+{
+  "app": {
+    "title": "Mara Yoga – thoughtful yoga practice",
+    "LogoName": "Mara Yoga",
+    "logoSubline": "thoughtful yoga practice"
+  },
+  "nav": {
+    "about": "About me",
+    "availablity": "Availability",
+    "contact": "Contact"
+  }
+}

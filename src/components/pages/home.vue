@@ -38,8 +38,10 @@
 
 <script>
   import Vue from "vue";
-  import contents from '../../contents';
+  import * as homeDE from '../../../content/home_de/home_de.json';
+  import * as homeEN from '../../../content/home_en/home_en.json';
   import getHTMLfromMDMixin from '../../mixins/getHTMLFromMD';
+  import { i18n } from "../../index.js";
 
   export default Vue.extend({
     components: {
@@ -47,7 +49,7 @@
     mixins: [getHTMLfromMDMixin],
     data() {
       return {
-        home: contents.home,
+        home: (i18n.locale =='de') ? homeDE : homeEN,
         isDisplayed : false,
       }
     },
