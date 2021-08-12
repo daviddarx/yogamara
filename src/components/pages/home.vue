@@ -4,23 +4,34 @@
     class="home"
     v-bind:class="{ 'is-displayed': this.isDisplayed }"
   >
-    <div id="intro-p1"
+    <div
+      id="intro-p1"
+      class="content-bit"
       v-html="getHTMLfromMD(home.intro01)"
     >
     </div>
-    <div id="intro-p2"
+    <div
+      id="intro-p2"
+      class="content-bit content-bit--right"
       v-html="getHTMLfromMD(home.intro02)"
     >
     </div>
-    <div id="about"
+    <div
+      id="about"
+      class="content-bit"
       v-html="getHTMLfromMD(home.about)"
     >
     </div>
-    <div id="availablity"
+    <div
+      id="availablity"
+      class="content-bit content-bit--right"
       v-html="getHTMLfromMD(home.availablity)"
     >
     </div>
-    <div id="contact">
+    <div
+      id="contact"
+      class="contact content-bit"
+    >
       <div class="contact__image">
         <img
           class="contact__image-el"
@@ -28,7 +39,8 @@
           :src = home.contactImage
         >
       </div>
-      <div class="contact__text"
+      <div
+        class="contact__text"
         v-html="getHTMLfromMD(home.contact)"
       >
       </div>

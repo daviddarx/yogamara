@@ -56,6 +56,14 @@ h6 {
   margin-bottom: var(--s-margin-bottom-h);
 }
 
+h2 {
+  font-size: var(--s-text-h2);
+}
+
+h3 {
+  font-size: var(--s-text-h3);
+}
+
 p {
   margin-bottom: var(--s-margin-bottom-p);
 }
@@ -71,7 +79,16 @@ a {
 }
 
 .logo {
-  font-weight: bold;
+  font-size: var(--s-text-logo);
+
+  &__subline {
+    @include fontRegular();
+
+    font-size: var(--s-text-s);
+    position: relative;
+    top: calc(var(--s-text-h1) * -0.35);
+    left: calc(var(--s-text-h1) * 0.25);
+  }
 }
 
 .navigation {
@@ -91,7 +108,39 @@ a {
 .content {
   position: relative;
   margin-top: calc(var(--s-gutter) * 2);
+  padding-bottom: calc(var(--s-gutter) * 2);
   box-sizing: border-box;
+}
+
+.content-bit {
+  position: relative;
+  width: calc(50vw - var(--s-gutter) * 2);
+
+  &--right {
+    position: relative;
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
+.contact {
+  display: flex;
+
+  &__image {
+    flex-basis: 35%;
+    align-self: center;
+    border-radius: 100%;
+    overflow: hidden;
+  }
+
+  &__image-el {
+    width: 100%;
+  }
+
+  &__text {
+    align-self: center;
+    margin-left: var(--s-gutter);
+  }
 }
 
 .content-enter-active {
