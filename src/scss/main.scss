@@ -14,29 +14,13 @@
 @import './assets.scss';
 
 * {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.01);
 }
 
 ::selection {
-  background: rgba(0, 0, 0, 0.99);
-  color: white;
+  background: rgba(18, 36, 129, 0.99);
+  color: var(--c-background);
   text-shadow: none;
-}
-
-.is-selection-inverted {
-  *::selection {
-    background: rgba(255, 255, 255, 0.99);
-    color: black;
-    text-shadow: none;
-  }
-}
-
-.is-selection-normal {
-  *::selection {
-    background: rgba(0, 0, 0, 0.99);
-    color: white;
-    text-shadow: none;
-  }
 }
 
 html,
@@ -56,8 +40,9 @@ body {
   line-height: var(--s-line-height);
   color: var(--c-text);
   overflow-x: hidden;
-  padding: 5vw;
+  padding: var(--s-gutter);
   box-sizing: border-box;
+  background-color: var(--c-background);
 }
 
 h1,
@@ -67,6 +52,8 @@ h4,
 h5,
 h6 {
   @include fontBold();
+
+  margin-bottom: var(--s-margin-bottom-h);
 }
 
 p {
