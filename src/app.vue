@@ -26,6 +26,8 @@
 
     <custom-transition></custom-transition>
 
+    <background></background>
+
     <browser-warning></browser-warning>
   </div>
 </template>
@@ -35,6 +37,7 @@
   import CustomHeader from './components/header.vue';
   import CustomTransition from './components/transition.vue';
   import Illustration from './components/illustration.vue';
+  import Background from './components/background.vue'
   import BrowserWarning from './components/browser-warning.vue';
   import browserDetect from './browser-detect';
 
@@ -44,6 +47,7 @@
       'custom-header': CustomHeader,
       'custom-transition': CustomTransition,
       'illustration': Illustration,
+      'background': Background,
       'browser-warning': BrowserWarning,
     },
     data() {

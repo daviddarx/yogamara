@@ -203,6 +203,24 @@ a {
   }
 }
 
+.background {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity linear 0.25s;
+  will-change: opacity;
+
+  &.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
 .content {
   position: relative;
   margin-top: calc(var(--s-gutter) * 2);
