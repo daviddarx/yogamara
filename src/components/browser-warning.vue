@@ -4,10 +4,10 @@
     class="browser-warning"
     v-if="this.isWarningDisplayed"
   >
+    <logo></logo>
     <div class="browser-warning__infos">
       <h2 class="browser-warning__title">
-        Bitte! 😳 <br>
-        Verwenden Sie einen modernen Browser... 😇 <br>
+        Verwenden Sie bitte einen modernen Browser... 😇 <br>
       </h2>
 
       <p class="browser-warning__desc">
@@ -24,8 +24,13 @@
 <script>
   import Vue from "vue";
   import browser from 'browser-detect';
+  import Logo from './logo.vue';
+
 
   export default Vue.extend({
+    components: {
+      'logo': Logo
+    },
     data() {
       return {
         isWarningDisplayed: false

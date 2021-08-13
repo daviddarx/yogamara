@@ -330,3 +330,18 @@ a {
   transform: scaleX(0);
   background-color: rgba(0, 0, 0, 0);
 }
+
+.browser-warning {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: var(--s-gutter);
+  background-color: var(--c-background);
+
+  &__infos {
+    margin-top: calc(var(--s-gutter) * 2);
+  }
+}
