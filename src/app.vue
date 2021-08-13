@@ -56,7 +56,13 @@
         isAndroid: false,
         splashScreen: undefined,
         isLoaded: false,
-        displayAfterLoadedDelay: 500
+        displayAfterLoadedDelay: 500,
+        imgsToLoad: [
+          "../static/images/yogamara_bg.png",
+          "../static/images/yogarmara_eye_01.png"
+        ],
+        imgsLoaded: 0,
+        imgLoading: undefined
       }
     },
     computed: {
@@ -65,9 +71,7 @@
       this.splashScreen = document.querySelector('.splash');
 
       document.fonts.ready.then(() => {
-        this.isLoaded = true;
-
-        this.splashScreen.classList.add('hidden');
+        this.preloadImage();
       });
 
       this.isiOS = browserDetect.isiOS;
@@ -76,6 +80,30 @@
       this.checkIfUserTouch();
     },
     methods: {
+      preloadImage: function () {
+        this.imgLoading = new Image;
+        if (this.imgLoading.complete) {
+          this.imageLoadCompleteListener()
+        } else {
+          this.imgLoading.addEventListener('load', this.imageLoadCompleteListener)
+        }
+        this.imgLoading.src = this.imgsToLoad[this.imgsLoaded];
+      },
+      imageLoadCompleteListener: function () {
+        this.imgLoading.removeEventListener('load', this.imageLoadCompleteListener);
+        this.imgsLoaded ++;
+
+        if (this.imgsLoaded < this.imgsToLoad.length) {
+          this.preloadImage();
+        } else {
+          this.setLoaded();
+        }
+      },
+      setLoaded: function () {
+        this.isLoaded = true;
+        this.splashScreen.classList.add('hidden');
+
+      },
       checkIfUserTouch: function () {
         window.isTouch = false;
         window.addEventListener('touchstart', this.touchListener);
