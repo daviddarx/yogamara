@@ -7,9 +7,7 @@
       'is-android': this.isAndroid
     }"
   >
-    <logo></logo>
-
-    <custom-navigation ref="nav"></custom-navigation>
+    <custom-header ref="header"></custom-header>
 
     <div class="content">
       <transition
@@ -32,8 +30,7 @@
 
 <script>
   import Vue from "vue";
-  import Logo from './components/logo.vue';
-  import CustomNavigation from './components/navigation.vue';
+  import CustomHeader from './components/header.vue';
   import CustomTransition from './components/transition.vue';
   import BrowserWarning from './components/browser-warning.vue';
   import browserDetect from './browser-detect';
@@ -41,8 +38,7 @@
 
   export default Vue.extend({
     components: {
-      'logo': Logo,
-      'custom-navigation': CustomNavigation,
+      'custom-header': CustomHeader,
       'custom-transition': CustomTransition,
       'browser-warning': BrowserWarning,
     },
