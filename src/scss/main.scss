@@ -263,6 +263,10 @@ a {
   }
 }
 
+.credits {
+  font-size: var(--s-text-s);
+}
+
 .content-enter-active {
   transition: transform var(--e-inout) 0.5s, opacity linear 0.5s;
 }
@@ -284,10 +288,6 @@ a {
   &.loaded {
     opacity: 1;
   }
-}
-
-.footer {
-  margin-top: 2em;
 }
 
 .transition {

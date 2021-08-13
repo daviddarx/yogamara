@@ -29,6 +29,8 @@
     <background></background>
 
     <browser-warning></browser-warning>
+
+    <credits></credits>
   </div>
 </template>
 
@@ -38,6 +40,7 @@
   import CustomTransition from './components/transition.vue';
   import Illustration from './components/illustration.vue';
   import Background from './components/background.vue'
+  import Credits from './components/credits.vue'
   import BrowserWarning from './components/browser-warning.vue';
   import browserDetect from './browser-detect';
 
@@ -49,6 +52,7 @@
       'illustration': Illustration,
       'background': Background,
       'browser-warning': BrowserWarning,
+      'credits': Credits,
     },
     data() {
       return {
