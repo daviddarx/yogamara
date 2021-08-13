@@ -25,10 +25,13 @@
         width: 100%;
         height: 100%;
         background-color: #e5e7ff;
+        transition: opacity linear 1s, visibility linear 0s;
+        transition-delay: 0s, 1s;
       }
 
       .splash.hidden {
-        display: none;
+        opacity: 0;
+        visibility: hidden;
       }
 
     </style>
