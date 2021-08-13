@@ -159,9 +159,24 @@ a {
   }
 
   &__container {
+    --s-float-x: 1%;
+    --s-float-y: 0.3%;
+    --pos-x: -15%;
+
     width: 30vw;
     margin: 0 auto;
-    transform: translateX(-15%);
+    animation: floating 10s linear both infinite;
+  }
+
+  @keyframes floating {
+    0%,
+    100% {
+      transform: translate3d(calc(var(--pos-x) + var(--s-float-x) * -1), calc(var(--s-float-y) * 1), 0);
+    }
+
+    50% {
+      transform: translate3d(calc(var(--pos-x) + var(--s-float-x) * 1), calc(var(--s-float-y) * -1), 0);
+    }
   }
 
   &__bg-image {
