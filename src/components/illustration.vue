@@ -49,13 +49,18 @@
         scrollDebounced: undefined,
         isIllustrationFixed: true,
         illustrationHeight: 0,
-        activeEyeID:0
+        activeEyeID:0,
+        eyesTimeout: undefined,
+        eyesTimeoutIntervalDuration: 4000,
+        eyesTimeoutBlinkDuration: 100,
+        eyesTimeoutDirection: 0,
       }
     },
     mounted () {
       this.scrollDebounced = debounce(this.scrollListener, 1);
       window.addEventListener('scroll', this.scrollDebounced);
       window.addEventListener('resize', this.resizeListener);
+      this.eyesTimeout = setTimeout(this.eyesTimeoutListener, this.eyesTimeoutIntervalDuration)
     },
     methods: {
       imageLoadCompleteListener: function () {
@@ -78,6 +83,31 @@
             this.$refs.illustration.style.top = document.body.scrollHeight - this.illustrationHeight + "px";
           }
         }
+      },
+      eyesTimeoutListener: function () {
+        let timeoutDuration = 0;
+
+        if (this.eyesTimeoutDirection == 0) {
+          if (this.activeEyeID == 0) {
+            this.activeEyeID = 1;
+            timeoutDuration = this.eyesTimeoutBlinkDuration;
+          } else if (this.activeEyeID == 1) {
+            this.activeEyeID = 2;
+            timeoutDuration = this.eyesTimeoutBlinkDuration;
+            this.eyesTimeoutDirection = 1;
+          }
+        } else {
+          if (this.activeEyeID == 2) {
+            this.activeEyeID = 1;
+            timeoutDuration = this.eyesTimeoutBlinkDuration;
+          } else if (this.activeEyeID == 1) {
+            this.activeEyeID = 0;
+            timeoutDuration = this.eyesTimeoutIntervalDuration;
+            this.eyesTimeoutDirection = 0;
+          }
+        }
+
+        this.eyesTimeout = setTimeout (this.eyesTimeoutListener, timeoutDuration);
       }
     }
   });
