@@ -4,31 +4,34 @@
     class="home"
     v-bind:class="{ 'is-displayed': this.isDisplayed }"
   >
-    <div
-      id="intro-p1"
-      class="content-bit"
-      v-html="getHTMLfromMD(home.intro01)"
-    >
-    </div>
-    <div
-      id="intro-p2"
-      class="content-bit content-bit--right"
-      v-html="getHTMLfromMD(home.intro02)"
-    >
-    </div>
-    <div
+    <section>
+      <h2 class="visually-hidden">Intro</h2>
+      <div
+        id="intro-p1"
+        class="content-bit"
+        v-html="getHTMLfromMD(home.intro01)"
+      >
+      </div>
+      <div
+        id="intro-p2"
+        class="content-bit content-bit--right"
+        v-html="getHTMLfromMD(home.intro02)"
+      >
+      </div>
+    </section>
+    <section
       id="about"
       class="content-bit"
       v-html="getHTMLfromMD(home.about)"
     >
-    </div>
-    <div
+    </section>
+    <section
       id="availablity"
       class="content-bit content-bit--right"
       v-html="getHTMLfromMD(home.availablity)"
     >
-    </div>
-    <div
+    </section>
+    <section
       id="contact"
       class="contact content-bit"
     >
@@ -44,7 +47,7 @@
         v-html="getHTMLfromMD(home.contact)"
       >
       </div>
-    </div>
+    </section>
   </div>
 </template>
 
