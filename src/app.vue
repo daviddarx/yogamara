@@ -9,6 +9,8 @@
   >
     <custom-header ref="header"></custom-header>
 
+    <illustration></illustration>
+
     <div class="content">
       <transition
         name="content"
@@ -32,6 +34,7 @@
   import Vue from "vue";
   import CustomHeader from './components/header.vue';
   import CustomTransition from './components/transition.vue';
+  import Illustration from './components/illustration.vue';
   import BrowserWarning from './components/browser-warning.vue';
   import browserDetect from './browser-detect';
 
@@ -40,6 +43,7 @@
     components: {
       'custom-header': CustomHeader,
       'custom-transition': CustomTransition,
+      'illustration': Illustration,
       'browser-warning': BrowserWarning,
     },
     data() {

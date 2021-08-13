@@ -125,7 +125,7 @@ a {
 }
 
 .languages {
-  --m-x: calc(var(--s-gutter) * 0.35);
+  --m-x: calc(var(--s-gutter) * 1);
   --m-y: calc(var(--s-gutter) * 0.25);
 
   position: absolute;
@@ -145,6 +145,49 @@ a {
   }
 }
 
+.illustration {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding-top: 10vh;
+  padding-bottom: var(--s-gutter);
+  pointer-events: none;
+
+  &.is-fixed {
+    position: fixed;
+    top: 0;
+  }
+
+  &__container {
+    width: 30vw;
+    margin: 0 auto;
+    transform: translateX(-15%);
+  }
+
+  &__bg-image {
+    width: 100%;
+    height: auto;
+  }
+
+  &__eye {
+    position: absolute;
+    width: 8.7%;
+    top: 9.9%;
+    left: 51.5%;
+  }
+
+  &__eye-img {
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: auto;
+
+    &.is-displayed {
+      display: block;
+    }
+  }
+}
+
 .content {
   position: relative;
   margin-top: calc(var(--s-gutter) * 2);
@@ -156,6 +199,7 @@ a {
   --s-w: 37vw;
 
   position: relative;
+  scroll-margin-top: 4em;
   width: calc(var(--s-w) - var(--s-gutter) * 2);
 
   &--right {
