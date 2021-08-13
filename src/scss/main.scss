@@ -43,6 +43,8 @@ body {
   padding: var(--s-gutter);
   box-sizing: border-box;
   background-color: var(--c-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
