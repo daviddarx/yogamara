@@ -4,7 +4,7 @@
     class="home"
     v-bind:class="{ 'is-displayed': this.isDisplayed }"
   >
-    <section>
+    <section class="content-section">
       <h2 class="visually-hidden">Intro</h2>
       <div
         id="intro-p1"
@@ -21,31 +21,41 @@
     </section>
     <section
       id="about"
-      class="content-bit"
-      v-html="getHTMLfromMD(home.about)"
+      class="content-section"
     >
+      <div
+        class="content-bit"
+        v-html="getHTMLfromMD(home.about)"
+      >
+      </div>
     </section>
     <section
       id="availablity"
-      class="content-bit content-bit--right"
-      v-html="getHTMLfromMD(home.availablity)"
+      class="content-section"
     >
+      <div
+        class="content-bit content-bit--right"
+        v-html="getHTMLfromMD(home.availablity)"
+      >
+      </div>
     </section>
     <section
       id="contact"
-      class="contact content-bit"
+      class="content-section"
     >
-      <div class="contact__image">
-        <img
-          class="contact__image-el"
-          alt="Mara Pavic – thoughtful yoga practice"
-          :src = home.contactImage
+      <div class="contact content-bit">
+        <div class="contact__image">
+          <img
+            class="contact__image-el"
+            alt="Mara Pavic – thoughtful yoga practice"
+            :src = home.contactImage
+          >
+        </div>
+        <div
+          class="contact__text"
+          v-html="getHTMLfromMD(home.contact)"
         >
-      </div>
-      <div
-        class="contact__text"
-        v-html="getHTMLfromMD(home.contact)"
-      >
+        </div>
       </div>
     </section>
   </div>

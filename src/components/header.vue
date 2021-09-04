@@ -1,6 +1,23 @@
 
 <template>
   <div class="header">
+    <div class="languages">
+      <a
+        class="language-link"
+        :class="{'is-active' : this.$route.params.lang=='de'}"
+        :href="'/de/' + this.$route.name"
+      >
+        DE
+      </a><!--
+      --><a
+        class="language-link"
+        :class="{'is-active' : this.$route.params.lang=='en'}"
+        :href="'/en/' + this.$route.name"
+      >
+        EN
+      </a>
+    </div>
+
     <logo></logo>
     <nav
       class="navigation"
@@ -29,23 +46,6 @@
           </a>
       </div>
     </nav>
-
-    <div class="languages">
-      <a
-        class="language-link"
-        :class="{'is-active' : this.$route.params.lang=='de'}"
-        :href="'/de/' + this.$route.name"
-      >
-        DE
-      </a><!--
-      --><a
-        class="language-link"
-        :class="{'is-active' : this.$route.params.lang=='en'}"
-        :href="'/en/' + this.$route.name"
-      >
-        EN
-      </a>
-    </div>
   </div>
 </template>
 

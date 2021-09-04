@@ -54,20 +54,40 @@
         eyesTimeoutIntervalDuration: 4000,
         eyesTimeoutBlinkDuration: 100,
         eyesTimeoutDirection: 0,
+        isMobile: false,
+        isMobileStep: 768
       }
     },
     mounted () {
       this.scrollDebounced = debounce(this.scrollListener, 1);
-      window.addEventListener('scroll', this.scrollDebounced);
       window.addEventListener('resize', this.resizeListener);
-      this.eyesTimeout = setTimeout(this.eyesTimeoutListener, this.eyesTimeoutIntervalDuration)
     },
     methods: {
       imageLoadCompleteListener: function () {
+        this.eyesTimeout = setTimeout(this.eyesTimeoutListener, this.eyesTimeoutIntervalDuration);
+
+        this.setScrollBehaviour();
         this.resizeListener();
       },
       resizeListener: function () {
+        const windowW = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+        if (windowW <= this.isMobileStep && this.isMobile == false) {
+          this.isMobile = true;
+          this.resetScrollBehaviour();
+        } else if (windowW > this.isMobileStep && this.isMobile == true) {
+          this.isMobile = false;
+          this.setScrollBehaviour();
+        }
+
         this.illustrationHeight = this.$refs.container.offsetHeight;
+      },
+      setScrollBehaviour: function() {
+        window.addEventListener('scroll', this.scrollDebounced);
+      },
+      resetScrollBehaviour: function () {
+        window.removeEventListener('scroll', this.scrollDebounced);
+        this.isIllustrationFixed = false;
       },
       scrollListener: function () {
         const windowH = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;

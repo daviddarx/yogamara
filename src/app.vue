@@ -22,15 +22,14 @@
         </router-view>
       </transition>
 
+      <credits></credits>
     </div>
-
     <custom-transition></custom-transition>
 
     <background></background>
 
     <browser-warning></browser-warning>
 
-    <credits></credits>
   </div>
 </template>
 

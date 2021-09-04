@@ -1,9 +1,11 @@
 
 <template>
   <footer
-    class="credits content-bit content-bit--right"
+    class="credits"
   >
-    Illustration: Moyleang Tan – Website: David Darx
+    <div class="content-bit content-bit--right">
+      Illustration: Moyleang Tan – Website: David Darx
+    </div>
   </footer>
 </template>
 <script>

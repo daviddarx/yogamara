@@ -72,10 +72,10 @@ $breakpoints: (
   //sizes
   --s-gutter: 4vw;
   --s-text: 1.32rem;
-  --s-text-s: calc(var(--s-text) * 0.8);
   --s-text-logo: calc(var(--s-text) * 1.7);
   --s-text-h2: calc(var(--s-text) * 1.7);
   --s-text-h3: calc(var(--s-text) * 1);
+  --s-text-s: calc(var(--s-text) * 0.8);
   --s-line-height: 1.5;
   --s-margin-bottom-p: calc(var(--s-text) * 1.5);
   --s-margin-bottom-h: calc(var(--s-text) * 1.2);
@@ -85,7 +85,21 @@ $breakpoints: (
   --e-out: cubic-bezier(0.165, 0.84, 0.44, 1); // quart
   --e-inout: cubic-bezier(0.77, 0, 0.175, 1); // quart
 
-  @include viewport('desktop-xl') {
+  @include viewport('tablet') {
+    --s-text: 1.5rem;
+  }
+
+  @include viewport('mobile-layout') {
     --s-text: 3rem;
+    --s-gutter: 8vw;
+  }
+
+  @include viewport('mobile-l') {
+    --s-text: 4rem;
+  }
+
+  @include viewport('mobile') {
+    --s-text: 4.5rem;
+    --s-text-s: calc(var(--s-text) * 0.7);
   }
 }

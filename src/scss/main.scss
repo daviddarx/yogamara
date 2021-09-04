@@ -106,10 +106,20 @@ a {
   display: flex;
   justify-content: space-between;
   margin-top: calc(var(--s-gutter) * 0.75);
+
+  @include viewport('mobile-layout') {
+    display: block;
+    margin-top: calc(var(--s-gutter) * 1.5);
+  }
 }
 
 .navigation {
-  margin-top: 0.5em;
+  margin-top: 0.75em;
+
+  @include viewport('mobile-layout') {
+    margin-top: calc(var(--s-gutter) * 2);
+    position: absolute;
+  }
 }
 
 .navigation-link {
@@ -117,6 +127,12 @@ a {
 
   margin-left: 1.5em;
   text-decoration: none;
+
+  @include viewport('mobile-layout') {
+    display: table;
+    margin-left: 0;
+    margin-bottom: 0.25em;
+  }
 
   &.is-current {
     background-color: black;
@@ -153,6 +169,32 @@ a {
   padding-bottom: var(--s-gutter);
   pointer-events: none;
 
+  @include viewport('mobile-layout') {
+    position: relative;
+    padding: 0;
+    height: 60vh;
+    overflow: hidden;
+    margin-top: var(--s-gutter);
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      bottom: 0;
+      background-color: var(--c-text);
+      opacity: 0.25;
+    }
+  }
+
+  @include viewport('mobile-l') {
+    height: 55vh;
+  }
+
+  @include viewport('mobile') {
+    height: 45vh;
+  }
+
   &.is-fixed {
     position: fixed;
     top: 0;
@@ -164,8 +206,28 @@ a {
     --pos-x: -15%;
 
     width: 30vw;
+    max-width: 568px;
     margin: 0 auto;
     animation: floating 10s linear both infinite;
+
+    @include viewport('tablet') {
+      width: 25vw;
+    }
+
+    @include viewport('mobile-layout') {
+      --pos-x: 0;
+
+      width: 50%;
+    }
+
+    @include viewport('mobile-l') {
+      margin: 0;
+      margin-left: 40%;
+    }
+
+    @include viewport('mobile') {
+      margin-left: 50%;
+    }
   }
 
   @keyframes floating {
@@ -226,6 +288,17 @@ a {
   margin-top: calc(var(--s-gutter) * 4);
   padding-bottom: calc(var(--s-gutter) * 2);
   box-sizing: border-box;
+
+  @include viewport('mobile-layout') {
+    margin-top: var(--s-gutter);
+    padding-bottom: var(--s-gutter);
+  }
+}
+
+.content-section {
+  @include viewport('mobile-layout') {
+    margin-bottom: calc(var(--s-gutter) * 2);
+  }
 }
 
 .content-bit {
@@ -234,6 +307,15 @@ a {
   position: relative;
   scroll-margin-top: 4em;
   width: calc(var(--s-w) - var(--s-gutter) * 2);
+
+  @include viewport('tablet-s') {
+    width: 100%;
+    margin-bottom: var(--s-margin-bottom-p);
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
 
   &--right {
     position: relative;
@@ -245,11 +327,35 @@ a {
 .contact {
   display: flex;
 
+  @include viewport('mobile') {
+    display: block;
+  }
+
   &__image {
-    flex-basis: 40%;
+    --s: calc(var(--s-gutter) * 3);
+
+    width: var(--s);
+    height: var(--s);
+    margin-right: calc(var(--s-gutter) * 0.75);
     align-self: center;
     border-radius: 100%;
     overflow: hidden;
+
+    @include viewport('tablet') {
+      --s: calc(var(--s-gutter) * 2.5);
+
+      align-self: normal;
+    }
+
+    @include viewport('mobile-layout') {
+      --s: calc(var(--s-gutter) * 3.5);
+
+      align-self: center;
+    }
+
+    @include viewport('mobile') {
+      margin-bottom: var(--s-gutter);
+    }
   }
 
   &__image-el {
@@ -258,13 +364,13 @@ a {
 
   &__text {
     align-self: center;
-    padding-left: calc(var(--s-gutter) * 0.75);
     margin-top: -1em;
   }
 }
 
 .credits {
   font-size: var(--s-text-s);
+  margin-top: calc(var(--s-gutter) * 2);
 }
 
 .content-enter-active {
