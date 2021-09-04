@@ -88,6 +88,7 @@
       resetScrollBehaviour: function () {
         window.removeEventListener('scroll', this.scrollDebounced);
         this.isIllustrationFixed = false;
+        this.$refs.illustration.style.top = "0";
       },
       scrollListener: function () {
         const windowH = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
