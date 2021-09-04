@@ -51,7 +51,7 @@
         illustrationHeight: 0,
         activeEyeID:0,
         eyesTimeout: undefined,
-        eyesTimeoutIntervalDuration: 4000,
+        eyesTimeoutIntervalDuration: 11000,
         eyesTimeoutBlinkDuration: 100,
         eyesTimeoutDirection: 0,
         isMobile: false,
