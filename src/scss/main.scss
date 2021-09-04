@@ -208,7 +208,7 @@ a {
     width: 30vw;
     max-width: 568px;
     margin: 0 auto;
-    animation: floating 10s linear both infinite;
+    transform: translate3d(var(--pos-x), 0, 0);
 
     @include viewport('tablet') {
       width: 25vw;
@@ -227,17 +227,6 @@ a {
 
     @include viewport('mobile') {
       margin-left: 50%;
-    }
-  }
-
-  @keyframes floating {
-    0%,
-    100% {
-      transform: translate3d(calc(var(--pos-x) + var(--s-float-x) * -1), calc(var(--s-float-y) * 1), 0);
-    }
-
-    50% {
-      transform: translate3d(calc(var(--pos-x) + var(--s-float-x) * 1), calc(var(--s-float-y) * -1), 0);
     }
   }
 
