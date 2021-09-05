@@ -13,11 +13,11 @@
   export default Vue.extend({
     data() {
       return {
-        colors: ["#E5E7FF", "#E2F0CB", "#F9F0C1", "#FFE7C0"],
+        colors: ["#E5E7FF", "#E2F0CB", "#FFE7C0"],
         isVisible: false,
         currentColorID: 0,
         colorChangeInterval: undefined,
-        colorChangeIntervalDuration: 4000,
+        colorChangeIntervalDuration: 15000,
         bodyResetTimeout: undefined,
         bodyResetTimeoutDuration: 1000
       }
